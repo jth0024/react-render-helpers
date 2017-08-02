@@ -2,7 +2,7 @@
 A collection of helpers for conditionally rendering components or elements in React.
 
 - Supports both **JSX** and **Hyperscript** syntax.
-- Supports lazy **evaluation** to avoid null reference errors.
+- Supports **lazy evaluation** to avoid null reference errors.
 - Provides **curried** helpers for easy partial application.
 
 
