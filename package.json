@@ -1,0 +1,45 @@
+{
+  "name": "react-render-helpers",
+  "version": "1.0.1",
+  "description": "A series of helper functions to add inline control-flow logic in React render methods.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel src --out-dir dist",
+    "lint": "eslint src",
+    "prerelease": "npm run test && npm run lint && npm run build",
+    "release": "npm publish",
+    "test": "ava",
+    "test:watch": "ava --watch"
+  },
+  "keywords": ["react", "render", "helpers", "tools", "logic"],
+  "author": "Jordan Hurt",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jth0024/react-render-helpers.git"
+  },
+  "devDependencies": {
+    "ava": "0.18.2",
+    "babel-cli": "6.24.0",
+    "babel-eslint": "7.1.1",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-latest": "6.24.0",
+    "babel-preset-stage-2": "6.22.0",
+    "babel-register": "6.24.0",
+    "eslint": "3.17.1",
+    "eslint-config-airbnb-base": "11.1.1",
+    "eslint-plugin-import": "2.2.0",
+    "rimraf": "2.6.1",
+    "sinon": "1.17.7"
+  },
+  "dependencies": {
+    "lodash": "4.17.4"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  }
+}
