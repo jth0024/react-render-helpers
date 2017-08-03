@@ -1,6 +1,6 @@
 {
   "name": "react-render-helpers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A series of helper functions to add inline control-flow logic in React render methods.",
   "main": "dist/index.js",
   "scripts": {
