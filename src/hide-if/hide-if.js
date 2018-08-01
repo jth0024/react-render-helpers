@@ -1,4 +1,4 @@
-import isFunction from 'lodash/isFunction';
+import { isFunction } from '../utils/is-function';
 
 export const hideIf = condition => result => {
   if (condition) return null;

@@ -1,5 +1,5 @@
-import has from 'lodash/has';
-import isFunction from 'lodash/isFunction';
+import { has } from '../utils/has';
+import { isFunction } from '../utils/is-function';
 
 export const switchOn = value => cases => {
   if (has(cases, value)) {
