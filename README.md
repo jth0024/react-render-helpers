@@ -1,11 +1,13 @@
 # react-render-helpers
+
+[![CircleCI](https://circleci.com/gh/jth0024/react-render-helpers/tree/master.svg?style=svg)](https://circleci.com/gh/jth0024/react-render-helpers/tree/master)
+
 A collection of helpers for conditionally rendering components or elements in React.
 
 - Supports both **JSX** and **Hyperscript** syntax.
 - Supports **lazy evaluation** to avoid null reference errors.
 - Provides **curried** helpers for easy partial application.
 
-[![CircleCI](https://circleci.com/gh/jth0024/react-render-helpers/tree/master.svg?style=svg)](https://circleci.com/gh/jth0024/react-render-helpers/tree/master)
 
 ## Installation
 
