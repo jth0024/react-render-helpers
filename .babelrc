@@ -3,9 +3,26 @@
     "transform-object-rest-spread"
   ],
   "presets": [
+    "minify",
     [
       "latest",
-      "stage-2",
+      "stage-2"
     ]
-  ]
+  ],
+  "env": {
+    "umd": {
+      "plugins": [
+        [
+          "transform-es2015-modules-umd",
+          {
+            "globals": {
+              "index": "rhh",
+              "react": "React"
+            },
+            "exactGlobals": true
+          }
+        ]
+      ]
+    }
+  }
 }
