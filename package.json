@@ -1,11 +1,13 @@
 {
   "name": "react-render-helpers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A series of helper functions to add inline control-flow logic in React render methods.",
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "babel src --out-dir dist",
+    "build:babel": "babel src --out-dir dist",
+    "build:umd": "mkdir -p umd && NODE_ENV=umd babel src/index.js --out-file umd/react-render-helpers.min.js",
+    "build": "npm run build:babel && npm run build:umd",
     "lint": "eslint src",
     "prerelease": "npm run test && npm run lint && npm run build",
     "release": "npm publish",
@@ -29,8 +31,10 @@
     "ava": "0.18.2",
     "babel-cli": "6.24.0",
     "babel-eslint": "7.1.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-preset-latest": "6.24.0",
+    "babel-preset-minify": "^0.4.3",
     "babel-preset-stage-2": "6.22.0",
     "babel-register": "6.24.0",
     "eslint": "3.17.1",
@@ -41,6 +45,9 @@
     "sinon": "1.17.7"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "react": ">=0.13.0"
+  },
   "ava": {
     "babel": "inherit",
     "require": [
