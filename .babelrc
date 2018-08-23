@@ -3,13 +3,15 @@
     "transform-object-rest-spread"
   ],
   "presets": [
-    "minify",
     [
       "latest",
       "stage-2"
     ]
   ],
   "env": {
+    "dist": {
+      "presets": ["minify"]
+    },
     "umd": {
       "plugins": [
         [

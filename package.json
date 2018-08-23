@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build:babel": "babel src --out-dir dist",
+    "build:dist": "mkdir -p dist && NODE_ENV=dist babel src --out-dir dist",
     "build:umd": "mkdir -p umd && NODE_ENV=umd babel src/index.js --out-file umd/react-render-helpers.min.js",
-    "build": "npm run build:babel && npm run build:umd",
+    "build": "npm run build:dist && npm run build:umd",
     "lint": "eslint src",
     "prerelease": "npm run test && npm run lint && npm run build",
     "release": "npm publish",
