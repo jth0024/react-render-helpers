@@ -5,6 +5,7 @@ A collection of helpers for conditionally rendering components or elements in Re
 - Supports **lazy evaluation** to avoid null reference errors.
 - Provides **curried** helpers for easy partial application.
 
+[![CircleCI](https://circleci.com/gh/jth0024/react-render-helpers/tree/master.svg?style=svg)](https://circleci.com/gh/jth0024/react-render-helpers/tree/master)
 
 ## Installation
 
