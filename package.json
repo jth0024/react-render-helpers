@@ -3,17 +3,6 @@
   "version": "1.0.4",
   "description": "A series of helper functions to add inline control-flow logic in React render methods.",
   "main": "dist/index.js",
-  "scripts": {
-    "prebuild": "rimraf dist && rimraf umd",
-    "build:dist": "mkdir -p dist && NODE_ENV=dist babel src --out-dir dist",
-    "build:umd": "mkdir -p umd && NODE_ENV=umd babel src/index.js --out-file umd/react-render-helpers.min.js",
-    "build": "npm run build:dist && npm run build:umd",
-    "lint": "eslint src",
-    "prerelease": "npm run test && npm run lint && npm run build",
-    "release": "npm publish",
-    "test": "ava",
-    "test:watch": "ava --watch"
-  },
   "keywords": [
     "react",
     "render",
@@ -26,6 +15,17 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jth0024/react-render-helpers.git"
+  },
+  "scripts": {
+    "commit": "npx git-cz",
+    "prebuild": "rimraf dist && rimraf umd",
+    "build:dist": "mkdir -p dist && NODE_ENV=dist babel src --out-dir dist",
+    "build:umd": "mkdir -p umd && NODE_ENV=umd babel src/index.js --out-file umd/react-render-helpers.min.js",
+    "build": "npm run build:dist && npm run build:umd",
+    "lint": "eslint src",
+    "release": "npx semantic-release",
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "devDependencies": {
     "ava": "0.18.2",

@@ -19,6 +19,8 @@ yarn add react-render-helpers
 ```javascript
 import h from 'react-hyperscript';
 import { hideIf } from 'react-render-helpers';
+// Or use modular imports
+import hideIf from 'react-render-helpers/hideIf'
 
 export default ({ isClosed }) => h('.window', {}, [
   hideIf(isClosed)(h('div', {}, 'Window is open!')),
@@ -33,6 +35,8 @@ export default ({ isClosed }) => h('.window', {}, [
 ```javascript
 import h from 'react-hyperscript';
 import { showIf } from 'react-render-helpers';
+// Or use modular imports
+import showIf from 'react-render-helpers/showIf'
 
 export default ({ isClosed }) => h('.window', {}, [
   showIf(isClosed)(h('div', {}, 'Window is closed!')),
@@ -47,6 +51,8 @@ export default ({ isClosed }) => h('.window', {}, [
 ```javascript
 import h from 'react-hyperscript';
 import { switchOn } from 'react-render-helpers';
+// Or use modular imports
+import switchOn from 'react-render-helpers/switchOn'
 
 export default ({ color }) => h('.palette', {}, [
   switchOn(color)({

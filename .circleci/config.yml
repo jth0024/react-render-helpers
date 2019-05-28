@@ -1,0 +1,74 @@
+version: 2.1
+executors:
+  builder:
+    docker:
+      - image: circleci/node:10.7.0
+jobs:
+  lint:
+    executor: builder
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Run linter
+          command: yarn lint
+  test:
+    executor: builder
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: Run unit tests
+          command: yarn test
+  release:
+    executor: builder
+    steps:
+      - checkout
+      - run: yarn install
+      # Run optional required steps before releasing
+      - run: yarn build
+      - run: yarn release
+
+workflows:
+  version: 2
+  validate_and_release:
+    # Run the test jobs first, then the release only when all the test jobs are successful
+    jobs:
+      - lint
+      - test
+      - release:
+          requires:
+            - lint
+            - test
