@@ -1,11 +1,8 @@
-version: 2.1
-executors:
-  builder:
-    docker:
-      - image: circleci/node:10.7.0
+version: 2
 jobs:
   lint:
-    executor: builder
+    docker:
+      - image: circleci/node:10.7.0
     steps:
       - checkout
 
@@ -29,7 +26,8 @@ jobs:
           name: Run linter
           command: yarn lint
   test:
-    executor: builder
+    docker:
+      - image: circleci/node:10.7.0
     steps:
       - checkout
 
@@ -53,7 +51,8 @@ jobs:
           name: Run unit tests
           command: yarn test
   release:
-    executor: builder
+    docker:
+      - image: circleci/node:10.7.0
     steps:
       - checkout
       - run: yarn install
