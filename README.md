@@ -3,6 +3,7 @@ A collection of helpers for conditionally rendering components or elements in Re
 
 - Supports both **JSX** and **Hyperscript** syntax.
 - Supports **lazy evaluation** to avoid null reference errors.
+- Support modularized imports to allow for tree-shaking.
 - Provides **curried** helpers for easy partial application.
 
 
